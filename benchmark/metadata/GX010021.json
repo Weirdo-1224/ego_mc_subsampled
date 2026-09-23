@@ -1,0 +1,156 @@
+{
+  "video_id": "GX010021",
+  "path": "videos/GX010021.MP4",
+  "file_size_bytes": 91608663,
+  "container": "mov,mp4,m4a,3gp,3g2,mj2",
+  "duration_seconds": 696.93,
+  "fps": 29.97,
+  "resolution": {
+    "width": 854,
+    "height": 480
+  },
+  "video_codec": "h264",
+  "has_annotation": true,
+  "event_count": 55,
+  "type_counts": {
+    "Feedback": 7,
+    "Instruction": 12,
+    "Instruction-Clarification": 7,
+    "Success": 12,
+    "User-Comment": 11,
+    "User-Question": 6
+  },
+  "timestamp_index": {
+    "Instruction": [
+      {
+        "index": 0,
+        "timestamp": 4.418
+      },
+      {
+        "index": 3,
+        "timestamp": 17.0
+      },
+      {
+        "index": 8,
+        "timestamp": 36.658
+      },
+      {
+        "index": 12,
+        "timestamp": 89.108
+      },
+      {
+        "index": 17,
+        "timestamp": 134.748
+      },
+      {
+        "index": 25,
+        "timestamp": 231.088
+      },
+      {
+        "index": 27,
+        "timestamp": 294.698
+      },
+      {
+        "index": 32,
+        "timestamp": 432.658
+      },
+      {
+        "index": 36,
+        "timestamp": 526.0
+      },
+      {
+        "index": 45,
+        "timestamp": 581.0
+      },
+      {
+        "index": 51,
+        "timestamp": 630.612
+      },
+      {
+        "index": 53,
+        "timestamp": 686.478
+      }
+    ],
+    "Feedback": [
+      {
+        "index": 5,
+        "timestamp": 24.128
+      },
+      {
+        "index": 9,
+        "timestamp": 79.0
+      },
+      {
+        "index": 13,
+        "timestamp": 117.88
+      },
+      {
+        "index": 22,
+        "timestamp": 204.538
+      },
+      {
+        "index": 30,
+        "timestamp": 397.648
+      },
+      {
+        "index": 33,
+        "timestamp": 479.58
+      },
+      {
+        "index": 34,
+        "timestamp": 489.74
+      }
+    ],
+    "Success": [
+      {
+        "index": 2,
+        "timestamp": 15.982
+      },
+      {
+        "index": 7,
+        "timestamp": 34.819
+      },
+      {
+        "index": 11,
+        "timestamp": 88.0
+      },
+      {
+        "index": 16,
+        "timestamp": 133.723
+      },
+      {
+        "index": 24,
+        "timestamp": 230.048
+      },
+      {
+        "index": 26,
+        "timestamp": 293.688
+      },
+      {
+        "index": 31,
+        "timestamp": 431.658
+      },
+      {
+        "index": 35,
+        "timestamp": 525.0
+      },
+      {
+        "index": 44,
+        "timestamp": 580.0
+      },
+      {
+        "index": 50,
+        "timestamp": 629.668
+      },
+      {
+        "index": 52,
+        "timestamp": 685.328
+      },
+      {
+        "index": 54,
+        "timestamp": 692.608
+      }
+    ]
+  },
+  "schema_version": "1.0.0"
+}

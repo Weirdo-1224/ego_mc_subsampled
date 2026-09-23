@@ -1,0 +1,169 @@
+{
+  "video_id": "GX010029",
+  "path": "videos/GX010029.MP4",
+  "file_size_bytes": 141162344,
+  "container": "mov,mp4,m4a,3gp,3g2,mj2",
+  "duration_seconds": 400.367,
+  "fps": 29.97,
+  "resolution": {
+    "width": 854,
+    "height": 480
+  },
+  "video_codec": "h264",
+  "has_annotation": true,
+  "event_count": 35,
+  "type_counts": {
+    "Feedback": 7,
+    "Instruction": 14,
+    "Success": 14
+  },
+  "timestamp_index": {
+    "Instruction": [
+      {
+        "index": 0,
+        "timestamp": 1.97
+      },
+      {
+        "index": 2,
+        "timestamp": 10.4
+      },
+      {
+        "index": 5,
+        "timestamp": 27.82
+      },
+      {
+        "index": 7,
+        "timestamp": 40.8
+      },
+      {
+        "index": 10,
+        "timestamp": 109.88
+      },
+      {
+        "index": 13,
+        "timestamp": 130.42
+      },
+      {
+        "index": 17,
+        "timestamp": 224.678
+      },
+      {
+        "index": 19,
+        "timestamp": 238.044
+      },
+      {
+        "index": 22,
+        "timestamp": 250.12
+      },
+      {
+        "index": 25,
+        "timestamp": 330.8
+      },
+      {
+        "index": 27,
+        "timestamp": 345.13
+      },
+      {
+        "index": 29,
+        "timestamp": 357.48
+      },
+      {
+        "index": 31,
+        "timestamp": 370.51
+      },
+      {
+        "index": 33,
+        "timestamp": 384.96
+      }
+    ],
+    "Feedback": [
+      {
+        "index": 3,
+        "timestamp": 16.54
+      },
+      {
+        "index": 8,
+        "timestamp": 51.57
+      },
+      {
+        "index": 11,
+        "timestamp": 123.0
+      },
+      {
+        "index": 14,
+        "timestamp": 165.22
+      },
+      {
+        "index": 15,
+        "timestamp": 219.8
+      },
+      {
+        "index": 20,
+        "timestamp": 244.08
+      },
+      {
+        "index": 23,
+        "timestamp": 300.0
+      }
+    ],
+    "Success": [
+      {
+        "index": 1,
+        "timestamp": 9.4
+      },
+      {
+        "index": 4,
+        "timestamp": 26.3
+      },
+      {
+        "index": 6,
+        "timestamp": 39.41
+      },
+      {
+        "index": 9,
+        "timestamp": 109.0
+      },
+      {
+        "index": 12,
+        "timestamp": 129.34
+      },
+      {
+        "index": 16,
+        "timestamp": 223.54
+      },
+      {
+        "index": 18,
+        "timestamp": 237.02
+      },
+      {
+        "index": 21,
+        "timestamp": 249.0
+      },
+      {
+        "index": 24,
+        "timestamp": 327.0
+      },
+      {
+        "index": 26,
+        "timestamp": 344.105
+      },
+      {
+        "index": 28,
+        "timestamp": 356.4
+      },
+      {
+        "index": 30,
+        "timestamp": 370.09
+      },
+      {
+        "index": 32,
+        "timestamp": 382.935
+      },
+      {
+        "index": 34,
+        "timestamp": 396.324
+      }
+    ]
+  },
+  "schema_version": "1.0.0"
+}

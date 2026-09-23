@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ego-mc-bench.local/schemas/timeline.schema.json",
+  "title": "Timeline",
+  "description": "Stage 2+ artifact: a temporally ordered event stream for one video, merging annotation-derived events with inferred state changes. Stage 1 defines the field specification only.",
+  "type": "object",
+  "required": ["timeline_id", "video_id", "duration_seconds", "events", "schema_version"],
+  "additionalProperties": false,
+  "properties": {
+    "timeline_id": {
+      "type": "string",
+      "pattern": "^TL-[A-Za-z0-9_-]+$",
+      "description": "Unique timeline identifier, e.g. TL-GX010021."
+    },
+    "video_id": {
+      "type": "string",
+      "description": "ID of the source video."
+    },
+    "duration_seconds": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "description": "Video duration in seconds; every event timestamp must fall within [0, duration_seconds]."
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["event_id", "timestamp", "event_type", "source"],
+        "additionalProperties": false,
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "pattern": "^E[0-9]+$",
+            "description": "Stable event identifier, ordered by timestamp, e.g. E0001."
+          },
+          "timestamp": {
+            "type": "number",
+            "minimum": 0,
+            "description": "Event time in seconds from video start."
+          },
+          "event_type": {
+            "type": "string",
+            "enum": [
+              "Instruction",
+              "Feedback",
+              "Success",
+              "User-Comment",
+              "User-Question",
+              "Instruction-Clarification",
+              "Error",
+              "StateChange"
+            ],
+            "description": "Source text types plus Stage 2+ types (Error, StateChange)."
+          },
+          "description": {
+            "type": ["string", "null"],
+            "description": "Text content or a short description of the event."
+          },
+          "step_id": {
+            "type": ["string", "null"],
+            "pattern": "^S[0-9]+$",
+            "description": "Procedure step this event belongs to; null if unassigned."
+          },
+          "source": {
+            "type": "string",
+            "enum": ["annotation", "inference", "manual"],
+            "description": "How the event was produced."
+          }
+        }
+      }
+    },
+    "schema_version": {"type": "string", "const": "1.0.0"}
+  }
+}

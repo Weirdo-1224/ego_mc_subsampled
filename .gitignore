@@ -1,0 +1,13 @@
+# 大型二进制：原始视频（数据集文件，不入库；LFS 规则保留在 .gitattributes 备用）
+videos/*.MP4
+# 隔离的无标注视频
+excluded/
+
+# 缓存与环境
+.cache/
+__pycache__/
+*.py[cod]
+
+# 系统文件
+Thumbs.db
+Desktop.ini

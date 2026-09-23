@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ego-mc-bench.local/schemas/source_annotations.schema.json",
+  "title": "SourceAnnotations",
+  "description": "Stage 1 artifact: normalized join of annotations/annotations.json with the video files on disk. Establishes the complete video_id <-> video file <-> events mapping without adding any semantic content.",
+  "type": "object",
+  "required": ["schema_version", "stage", "source", "videos"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0.0"},
+    "stage": {"type": "string", "const": "stage1"},
+    "source": {
+      "type": "object",
+      "required": ["annotations_file", "videos_dir", "sample_manifest"],
+      "additionalProperties": false,
+      "properties": {
+        "annotations_file": {"type": "string"},
+        "videos_dir": {"type": "string"},
+        "sample_manifest": {
+          "type": ["string", "null"],
+          "description": "Path to sample_manifest.json if present, else null."
+        }
+      }
+    },
+    "videos": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["video_id", "video_file", "has_video", "has_annotation", "event_count", "events"],
+        "additionalProperties": false,
+        "properties": {
+          "video_id": {"type": "string", "minLength": 1},
+          "video_file": {"type": "string"},
+          "has_video": {"type": "boolean"},
+          "has_annotation": {"type": "boolean"},
+          "event_count": {"type": "integer", "minimum": 0},
+          "events": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["index", "type", "text", "timestamp"],
+              "additionalProperties": false,
+              "properties": {
+                "index": {"type": "integer", "minimum": 0},
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "Instruction",
+                    "Feedback",
+                    "Success",
+                    "User-Comment",
+                    "User-Question",
+                    "Instruction-Clarification"
+                  ]
+                },
+                "text": {"type": "string"},
+                "timestamp": {"type": "number", "minimum": 0}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

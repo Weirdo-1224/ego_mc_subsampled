@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0.0",
+  "stage": "stage1",
+  "video_count": 7,
+  "annotated_video_count": 7,
+  "total_events": 253,
+  "videos": {
+    "GX010021": {
+      "metadata": "benchmark/metadata/GX010021.json",
+      "has_video": true,
+      "has_annotation": true,
+      "event_count": 55
+    },
+    "GX010029": {
+      "metadata": "benchmark/metadata/GX010029.json",
+      "has_video": true,
+      "has_annotation": true,
+      "event_count": 35
+    },
+    "GX010033": {
+      "metadata": "benchmark/metadata/GX010033.json",
+      "has_video": true,
+      "has_annotation": true,
+      "event_count": 26
+    },
+    "GX010037": {
+      "metadata": "benchmark/metadata/GX010037.json",
+      "has_video": true,
+      "has_annotation": true,
+      "event_count": 33
+    },
+    "GX010049": {
+      "metadata": "benchmark/metadata/GX010049.json",
+      "has_video": true,
+      "has_annotation": true,
+      "event_count": 20
+    },
+    "GX010053": {
+      "metadata": "benchmark/metadata/GX010053.json",
+      "has_video": true,
+      "has_annotation": true,
+      "event_count": 45
+    },
+    "GX010063": {
+      "metadata": "benchmark/metadata/GX010063.json",
+      "has_video": true,
+      "has_annotation": true,
+      "event_count": 39
+    }
+  }
+}

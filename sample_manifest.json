@@ -1,0 +1,28 @@
+{
+  "dataset": "Ego Mistake Corrections Benchmark (Ego-MC-Bench) - Subsampled",
+  "version": "1.0.0",
+  "total_videos": 7,
+  "total_annotations": 253,
+  "videos": [
+    "GX010021",
+    "GX010029",
+    "GX010033",
+    "GX010037",
+    "GX010049",
+    "GX010053",
+    "GX010063"
+  ],
+  "text_type_counts": {
+    "Feedback": 54,
+    "Instruction": 85,
+    "Instruction-Clarification": 10,
+    "Success": 82,
+    "User-Comment": 12,
+    "User-Question": 10
+  },
+  "files": {
+    "annotations": "annotations/annotations.json",
+    "videos_dir": "videos",
+    "video_pattern": "videos/<video_id>.MP4"
+  }
+}

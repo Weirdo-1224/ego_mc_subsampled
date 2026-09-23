@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ego-mc-bench.local/schemas/error.schema.json",
+  "title": "Error",
+  "description": "Stage 2+ artifact: one mistake made by the user in the video, with its evidence and detection/intervention timing. Stage 1 defines the field specification only; no error candidates are produced at this stage.",
+  "type": "object",
+  "required": [
+    "error_id",
+    "video_id",
+    "step_id",
+    "error_type",
+    "expected",
+    "observed",
+    "evidence",
+    "evidence_start",
+    "detectable_time",
+    "intervention_time",
+    "context_dependency",
+    "required_history",
+    "schema_version"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "error_id": {
+      "type": "string",
+      "pattern": "^ERR-[A-Za-z0-9_-]+$",
+      "description": "Unique error identifier, e.g. ERR-GX010021-01."
+    },
+    "video_id": {
+      "type": "string",
+      "description": "ID of the source video."
+    },
+    "step_id": {
+      "type": "string",
+      "pattern": "^S[0-9]+$",
+      "description": "Procedure step during which the error occurs."
+    },
+    "error_type": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Category from the Stage 2 error taxonomy (e.g. wrong_quantity, wrong_object, skipped_action, wrong_order, premature_action)."
+    },
+    "expected": {
+      "type": "string",
+      "minLength": 1,
+      "description": "What should have happened according to the instruction."
+    },
+    "observed": {
+      "type": "string",
+      "minLength": 1,
+      "description": "What the user actually did."
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["description"],
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Human-readable description of the visual/transcript evidence."
+        },
+        "event_ids": {
+          "type": "array",
+          "items": {"type": "string", "pattern": "^E[0-9]+$"},
+          "default": [],
+          "description": "Timeline event_ids supporting this error."
+        }
+      },
+      "description": "Evidence anchoring the error in the video."
+    },
+    "evidence_start": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Timestamp (s) where the observable evidence of the error begins."
+    },
+    "detectable_time": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Earliest timestamp (s) at which a streaming agent could detect the error."
+    },
+    "intervention_time": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "description": "Timestamp (s) at which feedback/correction is given; null if the error is never corrected."
+    },
+    "context_dependency": {
+      "type": "boolean",
+      "description": "True if detecting the error requires earlier context (prior steps/history), not just the current frame."
+    },
+    "required_history": {
+      "type": "array",
+      "items": {"type": "string"},
+      "default": [],
+      "description": "event_ids or step_ids that must be retained in memory to detect this error; empty if frame-local."
+    },
+    "schema_version": {"type": "string", "const": "1.0.0"}
+  }
+}

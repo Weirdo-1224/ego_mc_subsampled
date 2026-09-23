@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ego-mc-bench.local/schemas/episode.schema.json",
+  "title": "Episode",
+  "description": "Stage 2+ artifact: the assembled benchmark unit for one video, binding its media, metadata, procedure, timeline and errors. Stage 1 defines the field specification only.",
+  "type": "object",
+  "required": ["episode_id", "video_id", "video", "schema_version"],
+  "additionalProperties": false,
+  "properties": {
+    "episode_id": {
+      "type": "string",
+      "pattern": "^EP-[A-Za-z0-9_-]+$",
+      "description": "Unique episode identifier, e.g. EP-GX010021."
+    },
+    "video_id": {
+      "type": "string",
+      "description": "ID of the source video."
+    },
+    "video": {
+      "type": "object",
+      "required": ["path", "duration_seconds", "fps", "resolution"],
+      "additionalProperties": false,
+      "properties": {
+        "path": {"type": "string", "description": "Path to the video file, relative to the dataset root."},
+        "duration_seconds": {"type": "number", "exclusiveMinimum": 0},
+        "fps": {"type": "number", "exclusiveMinimum": 0},
+        "resolution": {
+          "type": "object",
+          "required": ["width", "height"],
+          "additionalProperties": false,
+          "properties": {
+            "width": {"type": "integer", "exclusiveMinimum": 0},
+            "height": {"type": "integer", "exclusiveMinimum": 0}
+          }
+        }
+      }
+    },
+    "procedure_path": {
+      "type": ["string", "null"],
+      "description": "Path to the procedure JSON, relative to the dataset root; null until Stage 2."
+    },
+    "timeline_path": {
+      "type": ["string", "null"],
+      "description": "Path to the timeline JSON, relative to the dataset root; null until Stage 2."
+    },
+    "error_paths": {
+      "type": "array",
+      "items": {"type": "string"},
+      "default": [],
+      "description": "Paths to error JSONs, relative to the dataset root; empty until Stage 2."
+    },
+    "metadata_path": {
+      "type": "string",
+      "description": "Path to the Stage 1 video metadata JSON, relative to the dataset root."
+    },
+    "stage": {
+      "type": "string",
+      "description": "Pipeline stage that produced this episode, e.g. 'stage2'."
+    },
+    "schema_version": {"type": "string", "const": "1.0.0"}
+  }
+}

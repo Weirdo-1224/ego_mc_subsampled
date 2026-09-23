@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ego-mc-bench.local/schemas/procedure.schema.json",
+  "title": "Procedure",
+  "description": "Stage 2+ artifact: the canonical step sequence for completing the task shown in one video. Stage 1 defines the field specification only; no semantic content is produced at this stage.",
+  "type": "object",
+  "required": ["procedure_id", "video_id", "task", "steps", "schema_version"],
+  "additionalProperties": false,
+  "properties": {
+    "procedure_id": {
+      "type": "string",
+      "pattern": "^PROC-[A-Za-z0-9_-]+$",
+      "description": "Unique procedure identifier, e.g. PROC-GX010021."
+    },
+    "video_id": {
+      "type": "string",
+      "description": "ID of the source video (matches the video filename stem)."
+    },
+    "task": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Short description of the overall task, e.g. 'bake a cake'."
+    },
+    "steps": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["step_id", "order", "instruction"],
+        "additionalProperties": false,
+        "properties": {
+          "step_id": {
+            "type": "string",
+            "pattern": "^S[0-9]+$",
+            "description": "Stable step identifier, e.g. S01."
+          },
+          "order": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "1-based position of the step in the canonical procedure."
+          },
+          "instruction": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Canonical instruction text for this step."
+          },
+          "depends_on": {
+            "type": "array",
+            "items": {"type": "string", "pattern": "^S[0-9]+$"},
+            "default": [],
+            "description": "step_ids that must be completed before this step."
+          },
+          "expected_outcome": {
+            "type": ["string", "null"],
+            "description": "Observable state indicating the step succeeded."
+          }
+        }
+      }
+    },
+    "schema_version": {"type": "string", "const": "1.0.0"}
+  }
+}
