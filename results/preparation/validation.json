@@ -1,0 +1,23 @@
+{
+  "errors": [],
+  "warnings": [
+    "147 items pending human review; structural validity does not establish evidence truth.",
+    "No GOLD answers: preparation bundle is not ready for formal evaluation.",
+    "Evidence release times are unverified; private transcript must not be supplied as an online stream."
+  ],
+  "record_counts": {
+    "Event": 55,
+    "State": 3,
+    "Dependency": 4,
+    "Rule": 19,
+    "Task": 3,
+    "Gold": 0,
+    "Intervention": 7
+  },
+  "evidence_count": 55,
+  "original_assets": {
+    "checked_files": 12,
+    "errors": []
+  },
+  "status": "PASS"
+}

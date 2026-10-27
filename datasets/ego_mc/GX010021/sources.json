@@ -1,0 +1,26 @@
+[
+  {
+    "id": "src:annotation",
+    "path": "annotations/annotations.json",
+    "kind": "annotation",
+    "sha256": "09d5f7a24fc5822458e449bf2906f1b21eb035028fa7f4d58faf257c4c703f29"
+  },
+  {
+    "id": "src:video",
+    "path": "videos/GX010021.MP4",
+    "kind": "video",
+    "sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9"
+  },
+  {
+    "id": "src:manifest",
+    "path": "sample_manifest.json",
+    "kind": "manifest",
+    "sha256": "f57c1016d570e21c41f4c651478d51a28264437154722e435c9da8dd418dc291"
+  },
+  {
+    "id": "src:design",
+    "path": "docs/Long_Horizon_Streaming_Agent_Benchmark_Overall_Design_v1.0 (1).md",
+    "kind": "design",
+    "sha256": "260908d8bab250d53bc27b13da48e74ffa22f9d7aa24f88470396f0361007cb0"
+  }
+]

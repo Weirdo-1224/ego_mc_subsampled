@@ -1,0 +1,5 @@
+{
+  "ego_mc": {"status": "CANDIDATE_IMPORTED", "source_manifest": "sample_manifest.json", "adapter": "datasets.ego_mc.convert", "episode": "GX010021"},
+  "assembly101": {"status": "NOT_IMPORTED", "adapter": null, "local_root": null, "instructions": "datasets/assembly101/README.md"},
+  "holoassist": {"status": "NOT_IMPORTED", "adapter": null, "local_root": null, "instructions": "datasets/holoassist/README.md"}
+}

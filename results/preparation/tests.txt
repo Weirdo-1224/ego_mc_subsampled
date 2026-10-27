@@ -1,0 +1,31 @@
+test_approved_needs_real_review_fields (test_validate.ValidationTests.test_approved_needs_real_review_fields) ... ok
+test_candidate_bundle_passes_without_claiming_gold (test_validate.ValidationTests.test_candidate_bundle_passes_without_claiming_gold) ... ok
+test_converter_refuses_existing_review_directory (test_validate.ValidationTests.test_converter_refuses_existing_review_directory) ... ok
+test_converter_rejects_changed_source_layout (test_validate.ValidationTests.test_converter_rejects_changed_source_layout) ... ok
+test_dependency_cycle (test_validate.ValidationTests.test_dependency_cycle) ... ok
+test_duplicate_id (test_validate.ValidationTests.test_duplicate_id) ... ok
+test_enabled_task_without_gold (test_validate.ValidationTests.test_enabled_task_without_gold) ... ok
+test_future_evidence_at_query (test_validate.ValidationTests.test_future_evidence_at_query) ... ok
+test_gold_and_task_cannot_be_public (test_validate.ValidationTests.test_gold_and_task_cannot_be_public) ... ok
+test_invalid_detection_window (test_validate.ValidationTests.test_invalid_detection_window) ... ok
+test_missing_field_and_invalid_type (test_validate.ValidationTests.test_missing_field_and_invalid_type) ... ok
+test_missing_record_and_evidence_refs (test_validate.ValidationTests.test_missing_record_and_evidence_refs) ... ok
+test_non_finite_timestamp (test_validate.ValidationTests.test_non_finite_timestamp) ... ok
+test_private_source_cannot_be_released (test_validate.ValidationTests.test_private_source_cannot_be_released) ... ok
+test_reference_cycle (test_validate.ValidationTests.test_reference_cycle) ... ok
+test_release_before_evidence_end (test_validate.ValidationTests.test_release_before_evidence_end) ... ok
+test_release_time_after_query (test_validate.ValidationTests.test_release_time_after_query) ... ok
+test_reversed_and_out_of_bounds_interval (test_validate.ValidationTests.test_reversed_and_out_of_bounds_interval) ... ok
+test_reviewed_gold_has_positive_path (test_validate.ValidationTests.test_reviewed_gold_has_positive_path) ... ok
+test_rule_validity (test_validate.ValidationTests.test_rule_validity) ... ok
+test_schema_is_valid (test_validate.ValidationTests.test_schema_is_valid) ... ok
+test_source_text_cannot_be_changed (test_validate.ValidationTests.test_source_text_cannot_be_changed) ... ok
+test_transitive_future_record (test_validate.ValidationTests.test_transitive_future_record) ... ok
+test_unknown_state_cannot_claim_value (test_validate.ValidationTests.test_unknown_state_cannot_claim_value) ... ok
+test_unreviewed_material_cannot_be_promoted (test_validate.ValidationTests.test_unreviewed_material_cannot_be_promoted) ... ok
+test_wrong_episode (test_validate.ValidationTests.test_wrong_episode) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 2.508s
+
+OK

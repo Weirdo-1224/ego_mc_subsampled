@@ -1,0 +1,12 @@
+{
+  "schema_version": "0.1.0",
+  "status": "DRAFT",
+  "authority": "Current preparation request; see README for design-v1.0 numbering differences",
+  "tracks": [
+    {"id": "T1", "name": "状态维护", "directory": "benchmark/tracks/T1", "design_v1_mapping": "T1", "outputs": ["State", "Event"]},
+    {"id": "T2", "name": "前置约束", "directory": "benchmark/tracks/T2", "design_v1_mapping": "T2.1 (subset)", "outputs": ["Dependency", "Rule", "Task"]},
+    {"id": "T3", "name": "历史依赖", "directory": "benchmark/tracks/T3", "design_v1_mapping": "T2.2/T2.3 (subset)", "outputs": ["Dependency", "Rule", "Task"]}
+  ],
+  "cross_track_entity": "Intervention",
+  "design_v1_monitoring_track": "Design v1.0 T3 retained as Intervention contract; no silent renumbering of the original document"
+}
