@@ -1,0 +1,8 @@
+{
+  "id": "E6", "title": "跨来源扩展与预算稳健性", "tracks": ["T1", "T2", "T3"],
+  "status": "DRAFT", "enabled": false,
+  "question": "统一契约能否扩展到新来源，并支持预算和历史跨度分层分析？",
+  "variants": ["ego_mc_pilot", "assembly101_adapter_pilot", "holoassist_adapter_pilot"],
+  "prerequisites": ["source_permissions_confirmed", "reviewed_new_source_adapters", "grouped_episode_splits", "frozen_budget"],
+  "result_dir": "results/E6"
+}

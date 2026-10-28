@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1.0",
+  "id": "ego_mc:GX010021",
+  "dataset": "ego_mc_subsampled",
+  "video_source_id": "src:video",
+  "duration_seconds": 696.929567,
+  "duration_method": "ffprobe",
+  "maturity": "CANDIDATE",
+  "review": {
+    "status": "PENDING",
+    "reviewer": null,
+    "reviewed_at": null,
+    "notes": "Requires human review against the video and source context."
+  },
+  "split": "preparation",
+  "provenance": "Local source annotation conversion only; video metadata probed but video content not reviewed. Track IDs follow current preparation requirements, not design v1.0 numbering. Phase-one version adds AI visual candidates from inspected local frames; no human approval, audio absent. Original bundle retained byte-for-byte."
+}

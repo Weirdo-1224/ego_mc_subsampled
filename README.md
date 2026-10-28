@@ -41,6 +41,15 @@ dataset_info:
 
 # Ego Mistake Corrections Benchmark (Ego-MC-Bench) - Random Sample
 
+> **GX010021 第一阶段视频核验准备（2026-10-27）**：已新增独立的
+> [审核工作台](results/video_review/GX010021_phase1_20261027/index.html)、
+> [视频时间线](results/video_review/GX010021_phase1_20261027/timeline.md)、
+> [T1–T3候选分析](results/video_review/GX010021_phase1_20261027/tasks.md)及
+> [方法与校验说明](results/video_review/GX010021_phase1_20261027/README.md)。
+> 视频无音轨；全部新增实体均为 CANDIDATE/PENDING，Gold为空，未运行正式评测。
+> 当前 E1–E6 定义采用 [phase1_20261027](experiments/phase1_20261027/README.md)。
+> 下文旧准备阶段记录与旧实验编号作为历史材料保留；其“未观看视频”等说明只描述原始候选包。
+
 ## Release Files
 
 - `annotations/annotations.json`

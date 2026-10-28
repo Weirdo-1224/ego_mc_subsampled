@@ -11,3 +11,11 @@ __pycache__/
 # 系统文件
 Thumbs.db
 Desktop.ini
+
+# 可重生成的审查媒体产物（帧/剪辑/缩略图，由 ffmpeg 从原始视频导出）
+results/video_review/**/clips/
+results/video_review/**/frames/
+results/video_review/**/detail/
+results/video_review/**/sheets/
+results/video_review/**/keyframe_images/
+

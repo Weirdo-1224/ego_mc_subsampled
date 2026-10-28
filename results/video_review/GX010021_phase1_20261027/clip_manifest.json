@@ -1,0 +1,686 @@
+[
+  {
+    "key": "oven_controls",
+    "path": "clips/oven_controls.mp4",
+    "source_interval": {
+      "start": 8,
+      "end": 16
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "d83163f12e2c9923e977c131b46ec2dd1a9929dc59aa7a728e0e310eb2c63387",
+    "duration": 8.008,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "container_change",
+    "path": "clips/container_change.mp4",
+    "source_interval": {
+      "start": 22,
+      "end": 36
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "f049c43ab3d48e01341e71bc99cb8e18421800bc0f4bf1dda61d0197bb3a64b5",
+    "duration": 14.014,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "take_eggs",
+    "path": "clips/take_eggs.mp4",
+    "source_interval": {
+      "start": 44,
+      "end": 60
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "af07264e6190d650f0dc2d8b59431cadb68b000d3eab0cf72368d9cca3c79a6d",
+    "duration": 16.016,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "crack_first",
+    "path": "clips/crack_first.mp4",
+    "source_interval": {
+      "start": 60,
+      "end": 66
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "4365679db9e3e2ed2767ead80114ee17636d4c0ef283d7157ab221e0f9509858",
+    "duration": 6.006,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "crack_second",
+    "path": "clips/crack_second.mp4",
+    "source_interval": {
+      "start": 68,
+      "end": 76
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "5a8617bcfbee90b4f6d2214f91ca75f737358ed0c87690ab987a23aa5db6ff00",
+    "duration": 8.008,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "return_intact_egg",
+    "path": "clips/return_intact_egg.mp4",
+    "source_interval": {
+      "start": 78,
+      "end": 90
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "bd2883bccb2d017a1a99372475f5de924ea3fcaf56fcfaa47715b4a905cd84a9",
+    "duration": 12.012,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "sugar_fill",
+    "path": "clips/sugar_fill.mp4",
+    "source_interval": {
+      "start": 94,
+      "end": 128
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "9970e58dfd111e47a28d2fa9262aca9cd618222846a3b674715e52ea8569ddc5",
+    "duration": 34.000634,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "sugar_add",
+    "path": "clips/sugar_add.mp4",
+    "source_interval": {
+      "start": 128,
+      "end": 134
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "51a14e4bb2773777c301757dfaaf37241c7db2c9634c112f017ec4aee2fda3e4",
+    "duration": 6.006,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "milk_add",
+    "path": "clips/milk_add.mp4",
+    "source_interval": {
+      "start": 146,
+      "end": 166
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "76f925b1f3485c9f0064e89c9bc5fc4be4350bc9c60e8ac4a2dc673bea66626d",
+    "duration": 20.02,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "mixer_setup",
+    "path": "clips/mixer_setup.mp4",
+    "source_interval": {
+      "start": 174,
+      "end": 200
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "5241452b9b4293d8083eb04a166625d43979a7fa24e8728cc77e3ea46dff6434",
+    "duration": 26.026,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "mix_wet",
+    "path": "clips/mix_wet.mp4",
+    "source_interval": {
+      "start": 200,
+      "end": 234
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "ecc46ac25f76743ba0762cadeb50cd6cf952008406a339fc55e60e74a2e0a4b4",
+    "duration": 34.000634,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "flour_add",
+    "path": "clips/flour_add.mp4",
+    "source_interval": {
+      "start": 260,
+      "end": 294
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "18eaabcb38cf099a391525376d2d1972c6a55600af520c015e98a8823b883958",
+    "duration": 34.000634,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "butter_prepare",
+    "path": "clips/butter_prepare.mp4",
+    "source_interval": {
+      "start": 302,
+      "end": 340
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "71e0dd1ea7487829ee8f8f70e6037407e3f5bfc10e4952e13c9b63703a5ee4bc",
+    "duration": 38.004633,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "microwave_first",
+    "path": "clips/microwave_first.mp4",
+    "source_interval": {
+      "start": 340,
+      "end": 390
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "7bf46e12185cddce56f68fb6d5c3b3c8b154dc20da60b94823a24513ff7a5cea",
+    "duration": 50.016633,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "butter_first_check",
+    "path": "clips/butter_first_check.mp4",
+    "source_interval": {
+      "start": 390,
+      "end": 402
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "2965d6ced3372d43d9a796566bb15dd0c8b9aeffde7377bb792124697011e411",
+    "duration": 12.012,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "microwave_second",
+    "path": "clips/microwave_second.mp4",
+    "source_interval": {
+      "start": 402,
+      "end": 426
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "287192719b887a63b04f3de72b592f7810983594763643a645e27105a459b194",
+    "duration": 24.024,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "butter_second_check",
+    "path": "clips/butter_second_check.mp4",
+    "source_interval": {
+      "start": 426,
+      "end": 432
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "cba8c9dc7e7591f548a834d89bd2338a91df7522bea6ed82ac28eb2eb54f78fb",
+    "duration": 6.006,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "butter_stir_add",
+    "path": "clips/butter_stir_add.mp4",
+    "source_interval": {
+      "start": 442,
+      "end": 470
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "916febe3053c00dcc9173f87d64d7fe9278c8a00b81c6dd3def03beb0af542f4",
+    "duration": 28.028,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "mix_batter",
+    "path": "clips/mix_batter.mp4",
+    "source_interval": {
+      "start": 472,
+      "end": 530
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "6fcd41e4b03eec6cebbfa9999a5008bdb9687c9c3a705af7b465cea81b4aa4ee",
+    "duration": 58.024633,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "tray_inspection",
+    "path": "clips/tray_inspection.mp4",
+    "source_interval": {
+      "start": 532,
+      "end": 556
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "1ce21b41b3fc150f87c4002e16960fbeb3bdcb9e68f7e359e561c552695af4c3",
+    "duration": 24.024,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "oil_pour_tilt",
+    "path": "clips/oil_pour_tilt.mp4",
+    "source_interval": {
+      "start": 556,
+      "end": 581
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "6516db668d6b891374878e385ec5e71cb9305c26526ce193bb96f6d23810476b",
+    "duration": 25.025,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "batter_inspection",
+    "path": "clips/batter_inspection.mp4",
+    "source_interval": {
+      "start": 582,
+      "end": 598
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "e6fa31c073328f9bbf7b74f17b7df0ff0e0b3cb1fe7b17291de5815c76f5b9e8",
+    "duration": 16.016,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "extra_powder",
+    "path": "clips/extra_powder.mp4",
+    "source_interval": {
+      "start": 598,
+      "end": 604
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "7542fbcfe0a47f5fc499a39dfef454ec141bb08f3b72a8ce1511e28df3456e03",
+    "duration": 6.006,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "remix",
+    "path": "clips/remix.mp4",
+    "source_interval": {
+      "start": 604,
+      "end": 630
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "b15c423f5baf5078717693c3522d83c2a4e754e0ac7f3a108cfa5db32a8e4f53",
+    "duration": 26.026,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "pour_batter",
+    "path": "clips/pour_batter.mp4",
+    "source_interval": {
+      "start": 632,
+      "end": 642
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "3f1a4e48cba7c33d5417dd8600011a129106d88c453628e4c1f13d0873ce4774",
+    "duration": 10.01,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "scrape_batter",
+    "path": "clips/scrape_batter.mp4",
+    "source_interval": {
+      "start": 644,
+      "end": 684
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "17057a11f258a3d7a1944508f6342ae8ac207f6073c0be5864e0d3df540a4a67",
+    "duration": 40.006633,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "oven_insert",
+    "path": "clips/oven_insert.mp4",
+    "source_interval": {
+      "start": 686,
+      "end": 694
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "3da448f395e22291d3bdbfec7f454fc70412239645b84f1156f745c76c9833f1",
+    "duration": 8.008,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "T1_oven_current",
+    "path": "clips/T1_oven_current.mp4",
+    "source_interval": {
+      "start": 0,
+      "end": 16
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "0e885be44ba97082f5ede4efe9d83cdb569c70fbd925a58a47ab2145f1070ef3",
+    "duration": 16.016,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "T1_eggs_current",
+    "path": "clips/T1_eggs_current.mp4",
+    "source_interval": {
+      "start": 60,
+      "end": 90
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "7b87ff4f92c2e0dad5f416164f4c23869267c494a757288851ea68e5c0c42152",
+    "duration": 30.03,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "T1_butter_current",
+    "path": "clips/T1_butter_current.mp4",
+    "source_interval": {
+      "start": 402,
+      "end": 432
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "408a8c4a93dadb7ca8a51b6ef387286a9cfd9a5f445ca3ac6335cf641997fca3",
+    "duration": 30.03,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "T2_eggs_current",
+    "path": "clips/T2_eggs_current.mp4",
+    "source_interval": {
+      "start": 170,
+      "end": 200
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "13ac7ce950a921cd896b0800029f3fa412487e39bddcc5da4e688cd206202b34",
+    "duration": 30.03,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "T2_tray_current",
+    "path": "clips/T2_tray_current.mp4",
+    "source_interval": {
+      "start": 600.612,
+      "end": 630.612
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "6e0c75287605b205d158b85be77133d7b7318776079dfb0bcb75eab2bc7d53e5",
+    "duration": 30.03,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "T3_eggs_history_current",
+    "path": "clips/T3_eggs_history_current.mp4",
+    "source_interval": {
+      "start": 495,
+      "end": 525
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "0aabdd09cdaeacd7c4b09df3eaba3c37b4c06082e9802d873692f80f58ea52e9",
+    "duration": 30.03,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "T3_butter_history_current",
+    "path": "clips/T3_butter_history_current.mp4",
+    "source_interval": {
+      "start": 495,
+      "end": 525
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "0aabdd09cdaeacd7c4b09df3eaba3c37b4c06082e9802d873692f80f58ea52e9",
+    "duration": 30.03,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "T3_tray_history_current",
+    "path": "clips/T3_tray_history_current.mp4",
+    "source_interval": {
+      "start": 600.612,
+      "end": 630.612
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "6e0c75287605b205d158b85be77133d7b7318776079dfb0bcb75eab2bc7d53e5",
+    "duration": 30.03,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  },
+  {
+    "key": "T3_rule_chain_current",
+    "path": "clips/T3_rule_chain_current.mp4",
+    "source_interval": {
+      "start": 526.368,
+      "end": 556.368
+    },
+    "source_sha256": "fe4a11550bf2aea09a39ce1e72dba4633adc8c8b6a540e9894696e8b2ed1c8f9",
+    "sha256": "ed915c8f1bdcd1d044498adac97b3d4cec0923072135805fa50bf93da6a1b1db",
+    "duration": 30.03,
+    "audio_streams": 0,
+    "maturity": "CANDIDATE",
+    "review": {
+      "status": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "notes": "AI visual observations of local decoded frames; requires independent human review."
+    }
+  }
+]

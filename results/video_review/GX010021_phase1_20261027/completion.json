@@ -1,0 +1,17 @@
+{
+  "maturity": "CANDIDATE",
+  "review": {
+    "status": "PENDING",
+    "reviewer": null,
+    "reviewed_at": null,
+    "notes": "机械复现记录，非事实批准。"
+  },
+  "readiness_expected_exit_code": 1,
+  "gold_original_bytes": 0,
+  "gold_phase1_bytes": 0,
+  "formal_benchmark_run": false,
+  "replay_harness_implemented": false,
+  "other_videos_content_analyzed": false,
+  "external_video_model_called": false,
+  "source_schema_modified": false
+}
