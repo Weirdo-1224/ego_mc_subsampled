@@ -1,8 +1,0 @@
-{
-  "id": "E3", "title": "前置约束与事实规范分离", "tracks": ["T2"],
-  "status": "DRAFT", "enabled": false,
-  "question": "系统能否区分已发布的要求和实际已满足的前置条件？",
-  "variants": ["current_window", "historical_evidence", "state_and_rules"],
-  "prerequisites": ["approved_dependencies", "approved_factual_states", "sufficient_evidence_sets", "isolated_probes"],
-  "result_dir": "results/E3"
-}

@@ -1,8 +1,0 @@
-{
-  "id": "E2", "title": "状态与记忆管理消融", "tracks": ["T1"],
-  "status": "DRAFT", "enabled": false,
-  "question": "固定模型后，摘要、检索和显式状态维护如何影响状态一致性？",
-  "variants": ["B2 rolling_summary", "B3 retrieval_memory", "B4 explicit_state"],
-  "prerequisites": ["approved_state_checkpoints", "causal_runner", "fixed_model", "frozen_budget"],
-  "result_dir": "results/E2"
-}

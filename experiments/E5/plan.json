@@ -1,8 +1,0 @@
-{
-  "id": "E5", "title": "可见性与捷径诊断", "tracks": ["T1", "T2", "T3"],
-  "status": "DRAFT", "enabled": false,
-  "question": "指令、专家反馈或题面是否暴露答案，长程任务是否依赖真实历史？",
-  "variants": ["instruction_only", "no_video", "feedback_hidden", "feedback_visible_after_verified_release"],
-  "prerequisites": ["approved_gold", "verified_feedback_release", "declared_visibility_regimes"],
-  "result_dir": "results/E5"
-}

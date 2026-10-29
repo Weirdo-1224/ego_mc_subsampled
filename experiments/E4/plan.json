@@ -1,8 +1,0 @@
-{
-  "id": "E4", "title": "历史证据与规则修订", "tracks": ["T3"],
-  "status": "DRAFT", "enabled": false,
-  "question": "系统能否结合多段历史和当时有效的规则版本回答？",
-  "variants": ["recent_only", "history_without_rule_versions", "history_with_rule_versions"],
-  "prerequisites": ["approved_rule_validity", "confirmed_history_necessity", "minimal_evidence_sets", "isolated_probes"],
-  "result_dir": "results/E4"
-}

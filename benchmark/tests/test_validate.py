@@ -13,7 +13,10 @@ from datasets.ego_mc.convert import convert
 class ValidationTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.original = load_bundle(ROOT / "datasets/ego_mc/GX010021")
+        cls._tmp = tempfile.TemporaryDirectory()
+        cls.addClassCleanup(cls._tmp.cleanup)
+        convert(Path(cls._tmp.name) / "gx010021")
+        cls.original = load_bundle(Path(cls._tmp.name) / "gx010021")
 
     def setUp(self):
         self.bundle = copy.deepcopy(self.original)

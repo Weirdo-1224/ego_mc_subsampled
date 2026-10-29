@@ -1,8 +1,0 @@
-{
-  "id": "E1", "title": "近期窗口与历史基线", "tracks": ["T1", "T2", "T3"],
-  "status": "DRAFT", "enabled": false,
-  "question": "在相同模型和预算下，保留历史是否带来可解释收益？",
-  "variants": ["B0 recent_window", "B1 growing_truncated_history"],
-  "prerequisites": ["approved_gold", "causal_runner", "frozen_budget", "verified_release_times"],
-  "result_dir": "results/E1"
-}
