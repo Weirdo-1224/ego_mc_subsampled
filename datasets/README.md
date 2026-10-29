@@ -1,5 +1,9 @@
 # 派生数据区与适配器约定
 
+> Legacy：下文是旧适配器和现有 Benchmark bundle 的兼容性说明。
+> 新开发遵守根 `AGENTS.md`，从 [`task_mining/`](../task_mining/README.md) 的纯视频契约开始；
+> 禁止把旧文本标注或旧候选接入新流水线。真实 VLM 接入在后续单独实现。
+
 原始 `../videos/`、`../annotations/`、`../docs/`、`../sample_manifest.json` 保留原位。
 每个 Episode 的派生包由 `episode.json`、`sources.json`、`evidence.jsonl` 及七类实体 JSONL 构成，
 统一使用 `benchmark/schema.json`。空实体文件合法，例如当前 `gold.jsonl` 为空。

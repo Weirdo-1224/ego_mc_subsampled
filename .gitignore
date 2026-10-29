@@ -1,14 +1,46 @@
-# 大型二进制：原始视频（数据集文件，不入库；LFS 规则保留在 .gitattributes 备用）
-videos/*.MP4
-# 隔离的无标注视频
+# Local source videos and large media, any directory / extension case
+*.[mM][pP]4
+*.[mM][oO][vV]
+*.[mM][kK][vV]
+*.[aA][vV][iI]
 excluded/
 
-# 缓存与环境
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+secrets/
+credentials*.json
+*.pem
+*.key
+.aws/
+
+# Python environments and caches
+.venv/
+venv/
 .cache/
 __pycache__/
 *.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
 
-# 系统文件
+# Local registry, model responses, extracted media and derived bundles
+runs/
+outputs/
+artifacts/
+frames/
+clips/
+*.log
+*.tmp
+datasets/ego_mc/GX010021*/
+results/*
+!results/README.md
+
+# OS files
 Thumbs.db
 Desktop.ini
+.DS_Store
 

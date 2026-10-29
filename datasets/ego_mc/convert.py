@@ -1,6 +1,7 @@
-"""Copy source utterances and create review candidates, never ground truth.
+"""LEGACY: copy source utterances for historical reproduction, never ground truth.
 
-Run from the repository root: python -m datasets.ego_mc.convert
+Excluded from the Long-History Task Mining pipeline; use python -m task_mining.
+Explicit historical use only: python -m datasets.ego_mc.convert
 An existing output directory is refused so a rerun cannot erase human reviews.
 """
 
@@ -10,6 +11,7 @@ import json
 from pathlib import Path
 import shutil
 import subprocess
+import sys
 
 ROOT = Path(__file__).resolve().parents[2]
 VERSION = "0.1.0"
@@ -174,6 +176,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=ROOT / "datasets/ego_mc/GX010021")
     args = parser.parse_args()
+    print("LEGACY: annotation conversion is excluded from the new video mining pipeline.", file=sys.stderr)
     try:
         print(json.dumps(convert(args.output), ensure_ascii=False, indent=2))
     except (ValueError, OSError, KeyError, subprocess.SubprocessError) as exc:
