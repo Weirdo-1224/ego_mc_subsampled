@@ -1,144 +1,150 @@
-# 单视频历史依赖候选构造工具 · V0.2
+# 完整视频事实提取与 Codex 输入包
 
-代码、提示词、模型配置、密钥入口、测试和本地审核产物集中在本目录。
-可以复制整个目录到其他位置，再修改视频路径；不导入当前仓库的 `task_mining`、旧标注或 Legacy 转换器。
-Python 3.11+，Python 代码仅使用标准库；`ffmpeg`、`ffprobe` 需在 PATH。
+当前主线：
 
-当前真实结果是 **42 条事件候选、4 条依赖候选**。原模型流程按用户要求暂停于 T2，
-尚未完成任务构造、独立视频核验或完整 E2E 验收。本轮目录整理和离线审核生成 **没有调用模型**。
+```text
+本地完整 MP4 → DashScope 原生 SDK 上传完整视频
+  → qwen3.8-max 单次全片事实提取 → 原样保存 video_facts.md
+  → prepare-tasks 导出 codex_input.md（RULES_PENDING）
+  → 后续另行制定 Codex 任务构造规则 → 人工复看并单独裁决 Gold
+```
 
-## 目录
+视频模型只提取事件、对象、状态、过程与可追溯关系。事实报告是未经人工核验的模型描述，
+原始 MP4 是最终事实依据。当前不生成问题、Benchmark 依赖、历史必要性判断或任务候选。
+
+本次改造没有调用 API、没有分析真实视频，也没有复核旧实验数据。真实 endpoint、账户权限、
+上传及 qwen3.8-max 的端到端调用仍待后续单视频实测。任务规则尚未制定。
+
+## 文件与入口
 
 ```text
 annotation_pipeline/
-  __main__.py               包启动入口；默认只做本地检查
-  configs/                  配置与独立凭据
-    config.example.json     视频、模型、API、采样、预算配置样例
-    config.local.json       你自己的配置，Git 忽略
-    credentials.example.json  空密钥样例
-    credentials.local.json    你自己的密钥，Git 忽略
-  scripts/                  全部实现脚本
-    cli.py                  统一命令入口
-    backend.py              OpenAI 兼容视频调用、缓存与预算
-    mine.py                 顺序流水线与阶段落盘
-    media.py                原视频预检查
-    validation.py           引用、时序、遮蔽、候选状态校验
-    contracts.py            独立中间类型
-    review.py               离线导入与视频复看页面
-    common.py               配置、独立凭据、提示词加载
-  prompts/                  可直接修改或整体替换的 Markdown 提示词
-    system.md               共同事实边界和输出契约提示
-    events.md               可见事件发现
-    dependencies.md         先挖掘历史依赖
-    tasks.md                仅从已有依赖构造问题
-    verifications.md        独立原视频核验
-    probe.md                8 秒视频可用性探测
-  tests/                    仅临时目录合成测试
-  runs/                     本目录内的本地运行/审核产物，Git 忽略
+  __main__.py                 python -m annotation_pipeline
+  configs/config.example.json 新配置样例
+  prompts/video_facts.md      随指令包逐字复制的 Video Fact Extraction V1
+  prompts/task_rules.md       RULES_PENDING 与未来候选基本字段约定
+  scripts/cli.py              analyze / prepare-tasks
+  scripts/common.py           严格配置、路径及 manifest 写入
+  scripts/backend.py          DashScope 2.x 原生完整视频调用
+  scripts/media.py            只读 ffprobe 预检查
+  scripts/pipeline.py         原文落盘与 Codex 输入包导出
+  tests/test_pipeline.py      合成文件、模拟 SDK、禁止网络与旧资料读取
+  runs/                      本地运行产物，Git 忽略
 ```
 
-## 先配置，再运行
+旧 mine/probe/review 命令及其切片、Base64 JSON、依赖挖掘、自动筛选实现已移除。
+已有本地配置和运行产物保持原位，不迁移、不复用、不读取。根目录与 task_mining 的历史说明
+未在本轮范围内改动；本目录新入口以本文为准。
 
-在本目录打开 PowerShell：
+## 安装与配置
+
+Python 3.11+；FFmpeg 发行包中的 ffprobe 需在 PATH，或通过配置指定。
+从仓库根目录执行：
 
 ```powershell
-Copy-Item -LiteralPath configs/config.example.json -Destination configs/config.local.json
-Copy-Item -LiteralPath configs/credentials.example.json -Destination configs/credentials.local.json
+python -m pip install -r annotation_pipeline/requirements.txt
+
+# 使用新名字，避免覆盖既有 config.local.json；目标已存在时请直接编辑。
+if (-not (Test-Path -LiteralPath annotation_pipeline/configs/qwen.local.json)) {
+    Copy-Item -LiteralPath annotation_pipeline/configs/config.example.json -Destination annotation_pipeline/configs/qwen.local.json
+}
+
+# 在当前终端设置配置指定的环境变量；真实值由你在本地填写。
+$env:DASHSCOPE_API_KEY = "<你的 API Key>"
 ```
 
-本机的两份本地文件已创建；上述复制命令仅用于尚无本地配置的新副本。
-编辑 `configs/config.local.json`，可自行设置以下内容：
+密钥仅从 api_key_env 指定的环境变量读取，不再读取旧凭据 JSON。
+不要把真实密钥写入样例配置或 Git。新配置拒绝未知字段，
+因此旧配置不会被静默解释成新流程；请基于新样例创建配置。
 
-| 配置 | 用途 |
+| 字段 | 默认值与含义 |
 |---|---|
-| `provider` | 来源名称，写入 provenance |
-| `base_url` | OpenAI 兼容 API 的根地址；程序追加 `/chat/completions` |
-| `model` | 你账户可用的视频模型名称，不在代码中锁死 |
-| `api_key_env` | 环境变量名称，也作为本地凭据文件中的键名 |
-| `credentials_file` | 默认 `credentials.local.json`，相对配置文件目录解析，即 `configs/credentials.local.json` |
-| `request_options` | 模型特定参数；换模型时按对应接口要求修改或设为 `{}` |
-| `video_fps_parameter` | 是否在视频输入中发送 `fps` 扩展字段；默认百炼为 `true` |
-| `video_path` | 原始 GX010029 MP4 路径；路径相对配置文件所在目录解析 |
-| `prompts_dir` | 默认 `../prompts`，可改为你自己的完整目录 |
-| `output_dir` | 默认 `../runs`，即工具根目录下的 `runs/` |
-| `current_window_seconds` | 默认 60 秒，写入每题并校验 |
-| `max_calls` / `budget_cny` | 单运行内的调用次数与本地费用预留上限 |
-| `cost_reserve_per_call_cny` | 每次发请求前的本地预留；是用户配置，不是官方账单保证 |
+| provider / model | dashscope / qwen3.8-max，本轮固定 |
+| base_url | https://maas.qianwenaiapi.com/api/v1；按本地账户设置原生 API endpoint，不是 compatible-mode 地址 |
+| api_key_env | DASHSCOPE_API_KEY，可改为其他环境变量名称 |
+| fps | 1.0；可在配置或 analyze --fps 中调整 |
+| timeout_seconds | 300 秒；SDK 自动重试固定关闭 |
+| output_dir | ../runs，相对该配置文件所在目录解析 |
+| ffprobe | ffprobe，可设置可执行文件路径；自定义路径建议用绝对路径 |
 
-密钥填写在 `configs/credentials.local.json`，例如键名使用 `DASHSCOPE_API_KEY`，值由你在本机填写。
-程序优先读取同名环境变量，其次读取本地凭据文件；不会自动遍历其他密钥。
-密钥值不写入配置快照、提示词、请求清单或候选。示例文件中没有真实密钥。
+不指定 --config 时使用随代码提供的新 config.example.json，不会隐式加载旧 config.local.json。
+--video 相对当前工作目录解析。SDK 延迟导入，prepare-tasks 与合成测试无需安装 SDK 或设置密钥。
 
-当前运输格式为 **OpenAI 兼容 Chat Completions + Base64 MP4 `video_url` + JSON 输出**。
-模型和地址可以替换，但接口需支持此格式；不同视频输入协议尚未实现。
-换模型后先执行 `inspect`，再按需执行单次 `probe`，其真实兼容性需重新验证。
-默认配置沿用已成功调用过的百炼北京 `qwen3-vl-plus`；模型别名不是固定权重快照。
+实现依据官方 [DashScope 2.x SDK](https://github.com/dashscope/dashscope-sdk-python)
+和[视频理解文档](https://docs.qwencloud.com/developer-guides/multimodal/vision)：
+使用 dashscope.Client(protocol="native", max_retries=0)，调用
+client.multimodal.chat.create，读取 response.output_text 与可用 usage。
+Windows 视频输入形如 file://D:/videos/example.MP4，POSIX 为 file:///...。
+提示词直接读取整个 Markdown 文本，不添加 system 提示词、不做模板替换、不设置 JSON 输出格式。
 
-可用 `ANNOTATION_MODEL`、`ANNOTATION_BASE_URL`、`ANNOTATION_API_KEY_ENV` 环境变量覆盖三项设置。
-价格估计仅在 `model == pricing_model` 且配置了价格表时计算；换模型未配价格则保持未知，
-不会把原模型价格当成新模型账单。真实账单始终为未知，需由服务商对账。
+## 运行
 
-## 统一命令
-
-以下命令在本目录执行。所有配置内的相对路径都以 `configs/config.local.json` 所在目录为基准，
-不以脚本目录为基准。
+以下 analyze 命令会上传视频并发出一次可能计费的请求；本轮开发没有执行它：
 
 ```powershell
-# 不调用模型；默认命令也等同 inspect
-python scripts/cli.py inspect --config configs/config.local.json
-python scripts/cli.py mine --config configs/config.local.json --dry-run
+python -m annotation_pipeline analyze --video "D:/local/videos/GX010021.MP4" --video-id GX010021 --run-id GX010021_qwen38_v1 --config annotation_pipeline/configs/qwen.local.json
 
-# 以下两种会调用所配置的模型；按你自己的配置与预算执行
-python scripts/cli.py probe --config configs/config.local.json --run-id probe_001
-python scripts/cli.py mine --config configs/config.local.json --run-id GX010029_001 --stop-after dependencies
-python scripts/cli.py mine --config configs/config.local.json --run-id GX010029_001 --resume
+# 在同一 output_dir 内读取上述报告，仅导出输入包，无 API 请求
+python -m annotation_pipeline prepare-tasks --run-id GX010021_qwen38_v1 --config annotation_pipeline/configs/qwen.local.json
 
-# 读取已有运行，生成独立的离线审核副本；不调用模型、不覆盖源运行
-python scripts/cli.py review --config configs/config.local.json --run-dir ../runs/v02_GX010029_20261029_03 --output-dir runs/GX010029_T1_review_new
-
-# 本目录独立测试；仓库总回归仍用根目录的 python -m unittest discover -v
-python -m unittest discover -s tests -t .. -v
+# 仅查看命令帮助，无视频读取或 API 请求
+python -m annotation_pipeline --help
 ```
 
-在仓库根目录也可使用包入口，例如：
+analyze 先检查 MP4 存在且非空、大小限制和 ffprobe 元数据/开头视频包，计算原文件 SHA-256。
+这些检查不等于全片解码或视频事实核验。缺视频或 ffprobe 会失败并阻止上传。
+
+本地文件上限按保守的十进制 100 MB（100,000,000 字节）执行。超限明确失败，不压缩、不切片、
+不更改 FPS。需要更大完整视频时，应另行采用服务商支持的已上传公网 URL 工作流；
+当前 CLI 仅接受本地 MP4，不接受 URL，也不会自动切换传输方式。
+
+成功后目录内容：
+
+```text
+runs/<run_id>/
+  manifest.json       视频路径/大小/SHA-256、预检查元数据、provider/model/endpoint、
+                      prompt_version/prompt_sha256、FPS、调用配置、时间、状态、usage
+  prompt.md           本次使用的完整提示词快照
+  video_facts.md      模型返回 Markdown 原文，UTF-8，保留空白与换行
+  codex_input.md      执行 prepare-tasks 后创建
+```
+
+不因 A–G 标题缺失而补写或重排报告。模型原文不代表已覆盖全片，也不代表事实正确。
+已知截断/非正常结束会保留返回原文并标记 FAILED，阻止导出；空响应或请求失败不伪造报告。
+manifest 记录 CANDIDATE/PENDING 和 fact_verification=NOT_PERFORMED。
+usage 缺失时为 null；本地没有计价表，预估费用和真实账单保持 null，后续调用需与提供方对账。
+
+每个 run_id 只能新建一次，成功、失败、调用中断和已有人工目录均不覆盖、不自动重试。
+超时或中断可能已计费，manifest 的 CALLING/FAILED 状态不保证没有扣费；核对后再选新 run_id。
+调用过程强制终止可能留下 CALLING；程序不会把它当作成功。prepare-tasks 也拒绝覆盖已有输入包。
+
+## Codex 输入包与后续规则
+
+prepare-tasks 只处理本流程 SUCCESS 运行，检查报告哈希后打包：
+完整报告原文、原始视频与调用元数据、task_rules.md 绝对路径及其当前内容、Candidate/Gold 边界。
+它不调用模型、不读原视频内容、不核验报告事实，也不输出 task_candidates.jsonl。
+报告修改、缺失或失败运行会明确拒绝导出。
+
+task_rules.md 明确为 RULES_PENDING，仅登记未来 JSONL 的基本字段：
+task_id、video_id、track、query_time、question、proposed_answer、
+evidence_refs、dependency_reason、review_status=PENDING。
+完整任务契约、历史依赖与遮蔽构造规则留待下一轮讨论，不用旧提示词替代，不新增筛选规则。
+
+Codex 输入包包含全片离线上下文，不可直接提供给被测流式 Agent。
+后续候选答案不是真值；只有人工复看原视频并记录真实审核者、时间和理由，确认必要证据、
+历史必要性与答案后，才能单独发布 Gold。
+
+## 离线验证
+
+在仓库根目录执行：
 
 ```powershell
-python -m annotation_pipeline inspect --config annotation_pipeline/configs/config.local.json
+python -m unittest discover -v
+# 只验证本目录
+python -m unittest discover -s annotation_pipeline/tests -t . -v
 ```
 
-新运行从头依次执行 Event → Dependency → Task → Independent Video Verification → Filtering → Review。
-事件和依赖先落盘，再生成问题。已有输出必须显式 `--resume`；程序检查源视频哈希、配置和提示词快照。
-更换提示词或模型后请新建运行，避免把旧缓存当成新实验。
-有成功原始响应时复用响应；中断/超时但没有响应的请求不自动重发，保留可能已计费的记录。
-旧开发目录里的结果仅通过 `review` 离线读取，不能直接作为新配置的续跑实验。
-
-## 替换提示词
-
-直接编辑 `prompts/*.md`，无需改 Python。也可以复制完整 `prompts/` 后修改 `prompts_dir`。
-模板使用 `$variable`，各阶段支持：
-
-| 文件 | 变量 |
-|---|---|
-| `system.md` | `$stage`、`$fields_json`、`$video_id`、`$id_prefix` |
-| `events.md` | `$start`、`$end` |
-| `dependencies.md` | `$window_seconds`、`$events_json`、`$anchors_json` |
-| `tasks.md` | `$target_candidates`、`$dependencies_json` |
-| `verifications.md` | `$questions_json` |
-| `probe.md` | `$start`、`$end` |
-
-模板里的普通美元符号使用 `$$`。保留程序要求的字段与契约，否则响应会被拒绝；
-修改研究指令不代表放宽时序、引用、遮蔽或 Gold 门禁。实际模板内容、哈希和渲染后的请求均留档。
-
-## 人工复看
-
-本机已有入口：[`runs/GX010029_T1_review_20261029/review.html`](runs/GX010029_T1_review_20261029/review.html)。
-双击 HTML 即可打开；无需服务端、账户或 API Key。
-
-页面集中展示 4 条依赖的解释、原视频区间、完整近期窗口、关键历史片段与相关事件链接，
-并提供 42 条事件的折叠视频证据、原始 JSON、模型原始响应和运行报告。
-审核记录空模板为同目录的 `review_notes.template.json`，请另存填写真实审核者、时间和理由。
-离线导入保留旧运行 provenance 和原始报告；`review_report.json` 只记录本次离线工作及 0 次 API 调用。
-
-所有产物保持 `CANDIDATE/PENDING`。当前 42/4 只是模型候选，未完成独立事实核验。
-0.5fps 粗采样可能漏掉短动作；模型时间定位不是逐帧真值。程序检查合法性不能替代事实复看。
-V0.2 不自动生成 Gold，不实现 Agent Runtime、四条件评测、批量视频或复杂审批平台。
+新测试只使用临时合成文件和模拟 SDK/ffprobe，阻止真实网络连接，并限制运行时文件读取，
+保证不读取旧标注、旧候选、旧 Gold 或旧运行产物。测试覆盖原文保留、单次完整视频请求、
+配置/FPS、失败留档、密钥脱敏、覆盖保护和无任务生成的输入包导出。
+仓库原有 Legacy 兼容性测试保持原样。

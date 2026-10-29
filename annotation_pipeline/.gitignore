@@ -1,4 +1,5 @@
 config.local.json
+configs/*.local.json
 credentials.local.json
 !configs/credentials.example.json
 .env
