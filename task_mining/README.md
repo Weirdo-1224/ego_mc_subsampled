@@ -1,3 +1,7 @@
+> V0.2 新增代码已集中到 [`annotation_pipeline/`](../annotation_pipeline/README.md)。
+> 本目录保留 V0.1 登记、预检查与接口；下面是 V0.1 基线说明。
+> 新模型调用、可替换提示词、模型/密钥配置和人工复看请使用独立目录入口。
+
 # Long-History Task Mining V0.1
 
 默认可执行入口仅完成本地视频登记和预检查：`python -m task_mining`，等价于

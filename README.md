@@ -1,3 +1,8 @@
+> V0.2 视频构造工具现集中在 [`annotation_pipeline/`](annotation_pipeline/README.md)。
+> 提示词、模型/API 配置、独立凭据入口、测试和本地审核入口均在该目录；旧 `task_mining/` 保留 V0.1 预检查能力。
+> 真实模型流程目前暂停于 T2，已产生 42 条事件、4 条依赖；尚未完成独立核验或完整闭环。
+> 实际状态见 [`state.md`](docs/v0.2_spec/state.md)。
+
 # Long-Horizon Streaming Video Agent Benchmark
 
 本项目的主研究目标是从原始长视频构建具有**必要历史依赖**的流式视频 Agent 评测任务。

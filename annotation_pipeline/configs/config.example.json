@@ -1,0 +1,51 @@
+{
+  "provider": "dashscope",
+  "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+  "model": "qwen3-vl-plus",
+  "api_key_env": "DASHSCOPE_API_KEY",
+  "credentials_file": "credentials.local.json",
+  "video_id": "GX010029",
+  "video_path": "../../videos/GX010029.MP4",
+  "output_dir": "../runs",
+  "prompts_dir": "../prompts",
+  "prompt_version": "v02-standalone-1",
+  "current_window_seconds": 60,
+  "discovery_segment_seconds": 200,
+  "discovery_fps": 0.5,
+  "verification_fps": 2,
+  "video_width": 640,
+  "target_candidates": 8,
+  "max_verifications": 4,
+  "max_calls": 16,
+  "budget_cny": 20,
+  "cost_reserve_per_call_cny": 1.1,
+  "max_tokens": 8000,
+  "timeout_seconds": 240,
+  "transport_retries": 0,
+  "structure_retries": 1,
+  "video_fps_parameter": true,
+  "request_options": {
+    "enable_thinking": false,
+    "temperature": 0.1
+  },
+  "pricing_model": "qwen3-vl-plus",
+  "price_source": "https://help.aliyun.com/zh/model-studio/qwen3-vl-plus",
+  "pricing_checked_date": "2026-10-29",
+  "price_cny_per_million": [
+    [
+      32768,
+      1,
+      10
+    ],
+    [
+      131072,
+      1.5,
+      15
+    ],
+    [
+      262144,
+      3,
+      30
+    ]
+  ]
+}
